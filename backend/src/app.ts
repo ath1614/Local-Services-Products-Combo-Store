@@ -6,6 +6,9 @@ import productRoutes from './routes/product.routes';
 import serviceRoutes from './routes/service.routes';
 import profileRoutes from './routes/profile.routes';
 import orderRoutes from './routes/order.routes';
+import reviewRoutes from './routes/review.routes';
+import searchRoutes from './routes/search.routes';
+import adminRoutes from './routes/admin.routes';
 
 const app = express();
 
@@ -22,5 +25,8 @@ app.use('/api/products', productRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/profiles', profileRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/reviews', reviewRoutes);
+app.use('/api/search', searchRoutes);
+app.use('/api/admin', adminRoutes);
 
 export default app;
