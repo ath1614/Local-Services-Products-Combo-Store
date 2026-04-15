@@ -3,14 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/landing.css';
 
 const CATEGORIES = [
-  { icon: '🛒', name: 'Groceries', type: 'product' },
-  { icon: '🔧', name: 'Plumbing', type: 'service' },
-  { icon: '⚡', name: 'Electrical', type: 'service' },
-  { icon: '🧹', name: 'Cleaning', type: 'service' },
-  { icon: '💊', name: 'Pharmacy', type: 'product' },
-  { icon: '🎨', name: 'Painting', type: 'service' },
-  { icon: '📱', name: 'Electronics', type: 'product' },
-  { icon: '🌿', name: 'Gardening', type: 'service' },
+  { label: 'Groceries', type: 'product' },
+  { label: 'Plumbing', type: 'service' },
+  { label: 'Electrical', type: 'service' },
+  { label: 'Cleaning', type: 'service' },
+  { label: 'Pharmacy', type: 'product' },
+  { label: 'Painting', type: 'service' },
+  { label: 'Electronics', type: 'product' },
+  { label: 'Gardening', type: 'service' },
 ];
 
 export default function Landing() {
@@ -24,11 +24,10 @@ export default function Landing() {
 
   return (
     <>
-      {/* Hero */}
       <section className="hero">
         <div className="container hero-inner">
           <div>
-            <div className="hero-eyebrow">🌿 Hyperlocal Marketplace</div>
+            <div className="hero-eyebrow">Hyperlocal Marketplace</div>
             <h1 className="hero-title">
               Your neighborhood,<br />
               <span className="highlight">one tap away</span>
@@ -49,13 +48,12 @@ export default function Landing() {
 
           <div className="hero-visual">
             {[
-              { icon: '🔧', title: 'Plumber Booked', sub: 'Arrives in 45 min', price: '₹299' },
-              { icon: '🛒', title: 'Groceries', sub: 'Fresh & local', price: '₹840' },
-              { icon: '⚡', title: 'Electrician', sub: 'Verified pro', price: '₹499' },
-              { icon: '🧹', title: 'Deep Clean', sub: '3hr session', price: '₹699' },
+              { title: 'Plumber Booked', sub: 'Arrives in 45 min', price: '₹299' },
+              { title: 'Groceries', sub: 'Fresh & local', price: '₹840' },
+              { title: 'Electrician', sub: 'Verified pro', price: '₹499' },
+              { title: 'Deep Clean', sub: '3hr session', price: '₹699' },
             ].map((c, i) => (
               <div className="hero-card" key={i}>
-                <div className="hero-card-icon">{c.icon}</div>
                 <div className="hero-card-title">{c.title}</div>
                 <div className="hero-card-sub">{c.sub}</div>
                 <div className="hero-card-price">{c.price}</div>
@@ -65,11 +63,9 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Search */}
       <section className="search-section">
         <div className="container">
           <form className="search-bar" onSubmit={handleSearch}>
-            <span>🔍</span>
             <input
               value={query}
               onChange={e => setQuery(e.target.value)}
@@ -80,7 +76,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Categories */}
       <section className="categories-section">
         <div className="container">
           <div className="section-header">
@@ -91,12 +86,11 @@ export default function Landing() {
           <div className="categories-grid">
             {CATEGORIES.map(cat => (
               <Link
-                key={cat.name}
-                to={`/${cat.type === 'product' ? 'products' : 'services'}?category=${cat.name.toLowerCase()}`}
+                key={cat.label}
+                to={`/${cat.type === 'product' ? 'products' : 'services'}?category=${cat.label.toLowerCase()}`}
                 className="category-card"
               >
-                <span className="category-icon">{cat.icon}</span>
-                <span className="category-name">{cat.name}</span>
+                <span className="category-name">{cat.label}</span>
                 <span className="category-count">{cat.type === 'product' ? 'Products' : 'Services'}</span>
               </Link>
             ))}
@@ -104,7 +98,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How it works */}
       <section className="how-section">
         <div className="container">
           <div className="section-header">
@@ -127,7 +120,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="cta-section">
         <div className="container">
           <div className="cta-banner">
@@ -140,7 +132,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-inner">

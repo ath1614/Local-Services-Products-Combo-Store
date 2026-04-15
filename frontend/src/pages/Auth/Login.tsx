@@ -35,9 +35,9 @@ export default function Login() {
           <h2 className="auth-left-title">Welcome back to your neighborhood</h2>
           <p className="auth-left-sub">Products delivered. Services booked. All in one place.</p>
           <div className="auth-perks">
-            {[['🛒','Unified cart for products & services'],['⚡','60-min local delivery'],['✅','Verified local providers']].map(([icon, text]) => (
+            {[['Unified cart for products & services'], ['60-min local delivery'], ['Verified local providers']].map(([text]) => (
               <div className="auth-perk" key={text}>
-                <div className="auth-perk-icon">{icon}</div>
+                <div className="auth-perk-dot" />
                 <span>{text}</span>
               </div>
             ))}
@@ -60,7 +60,7 @@ export default function Login() {
             </div>
             <div className="input-group">
               <label>Password</label>
-              <input className="input" type="password" placeholder="••••••••" value={form.password}
+              <input className="input" type="password" placeholder="Min. 6 characters" value={form.password}
                 onChange={e => setForm(f => ({ ...f, password: e.target.value }))} required />
             </div>
             <button type="submit" className="btn btn-primary" disabled={loading}>

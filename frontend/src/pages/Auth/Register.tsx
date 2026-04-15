@@ -5,9 +5,9 @@ import { useAuth } from '../../hooks/useAuth';
 import '../../styles/auth.css';
 
 const ROLES = [
-  { value: 'customer', icon: '🛍️', label: 'Customer' },
-  { value: 'vendor', icon: '🏪', label: 'Vendor' },
-  { value: 'service_provider', icon: '🔧', label: 'Provider' },
+  { value: 'customer', label: 'Customer' },
+  { value: 'vendor', label: 'Vendor' },
+  { value: 'service_provider', label: 'Provider' },
 ];
 
 export default function Register() {
@@ -40,9 +40,9 @@ export default function Register() {
           <h2 className="auth-left-title">Join your digital neighborhood</h2>
           <p className="auth-left-sub">Whether you're a customer, vendor, or service professional — LocalLink has a place for you.</p>
           <div className="auth-perks">
-            {[['🏪','List your shop or services'],['📊','Real-time dashboard & analytics'],['🌍','Reach customers within 5km']].map(([icon, text]) => (
+            {[['List your shop or services'], ['Real-time dashboard & analytics'], ['Reach customers within 5km']].map(([text]) => (
               <div className="auth-perk" key={text}>
-                <div className="auth-perk-icon">{icon}</div>
+                <div className="auth-perk-dot" />
                 <span>{text}</span>
               </div>
             ))}
@@ -67,7 +67,6 @@ export default function Register() {
                     className={`role-option ${form.role === r.value ? 'selected' : ''}`}
                     onClick={() => setForm(f => ({ ...f, role: r.value }))}
                   >
-                    <div className="role-icon">{r.icon}</div>
                     <div className="role-name">{r.label}</div>
                   </div>
                 ))}
@@ -75,7 +74,7 @@ export default function Register() {
             </div>
             <div className="input-group">
               <label>Full name</label>
-              <input className="input" placeholder="Atharv Soni" value={form.name}
+              <input className="input" placeholder="Your full name" value={form.name}
                 onChange={e => setForm(f => ({ ...f, name: e.target.value }))} required />
             </div>
             <div className="input-group">

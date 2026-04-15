@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="navbar-actions">
           {user && (
             <button className="cart-btn" onClick={() => navigate('/cart')}>
-              🛒 Cart
+              Cart
               {count > 0 && <span className="cart-count">{count}</span>}
             </button>
           )}

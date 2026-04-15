@@ -27,7 +27,6 @@ export default function Orders() {
 
         {orders.length === 0 ? (
           <div className="empty-state">
-            <div className="icon">📋</div>
             <h3>No orders yet</h3>
             <p>Your order history will appear here</p>
           </div>
@@ -59,7 +58,7 @@ export default function Orders() {
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border)', paddingTop: 14 }}>
-                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>📍 {order.deliveryAddress}</span>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{order.deliveryAddress}</span>
                   <span style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--accent)' }}>
                     ₹{order.totalAmount}
                   </span>

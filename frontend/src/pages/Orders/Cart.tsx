@@ -35,7 +35,6 @@ export default function Cart() {
     <div className="cart-page">
       <div className="container">
         <div className="empty-state" style={{ paddingTop: 120 }}>
-          <div className="icon">🛒</div>
           <h3>Your cart is empty</h3>
           <p>Add some products or book a service</p>
           <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
@@ -55,7 +54,9 @@ export default function Cart() {
           <div className="cart-items">
             {items.map(item => (
               <div className="cart-item" key={item.id}>
-                <div className="cart-item-icon">{item.type === 'product' ? '📦' : '🔧'}</div>
+                <div className="cart-item-icon">
+                  <span className="cart-item-type-label">{item.type === 'product' ? 'P' : 'S'}</span>
+                </div>
                 <div className="cart-item-info">
                   <div className="cart-item-type">{item.type}</div>
                   <div className="cart-item-name">{item.name}</div>

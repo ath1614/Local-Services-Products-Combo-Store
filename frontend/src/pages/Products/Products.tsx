@@ -6,7 +6,6 @@ import '../../styles/catalog.css';
 import '../../styles/components.css';
 
 const CATEGORIES = ['All', 'Groceries', 'Electronics', 'Pharmacy', 'Hardware', 'Clothing'];
-const ICONS: Record<string, string> = { Groceries: '🛒', Electronics: '📱', Pharmacy: '💊', Hardware: '🔩', Clothing: '👕' };
 
 export default function Products() {
   const [products, setProducts] = useState<any[]>([]);
@@ -49,7 +48,6 @@ export default function Products() {
 
         <div className="catalog-toolbar">
           <div className="catalog-search">
-            <span>🔍</span>
             <input placeholder="Search products..." value={search} onChange={e => setSearch(e.target.value)} />
           </div>
         </div>
@@ -64,7 +62,6 @@ export default function Products() {
           <div className="catalog-loading"><div className="spinner" /></div>
         ) : filtered.length === 0 ? (
           <div className="empty-state">
-            <div className="icon">📦</div>
             <h3>No products found</h3>
             <p>Try a different category or search term</p>
           </div>
@@ -72,13 +69,15 @@ export default function Products() {
           <div className="products-grid">
             {filtered.map(p => (
               <div className="card product-card" key={p._id} onClick={() => navigate(`/products/${p._id}`)}>
-                <div className="product-img">{ICONS[p.category] || '📦'}</div>
+                <div className="product-img">
+                  <span className="product-img-label">{p.category || 'Product'}</span>
+                </div>
                 <div className="product-info">
                   <div className="product-vendor">{p.vendorId?.shopName || 'Local Vendor'}</div>
                   <div className="product-name">{p.name}</div>
                   <div className="product-footer">
                     <span className="product-price">₹{p.price}</span>
-                    <button className="btn btn-accent btn-sm" onClick={e => handleAdd(e, p)}>+ Cart</button>
+                    <button className="btn btn-accent btn-sm" onClick={e => handleAdd(e, p)}>Add to Cart</button>
                   </div>
                   <div className="product-stock">{p.stock > 0 ? `${p.stock} in stock` : 'Out of stock'}</div>
                 </div>

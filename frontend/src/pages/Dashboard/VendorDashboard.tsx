@@ -48,9 +48,9 @@ export default function VendorDashboard() {
         </div>
 
         <div className="stats-grid">
-          <div className="stat-card"><div className="stat-card-icon">📦</div><div className="stat-card-label">Products</div><div className="stat-card-value">{products.length}</div></div>
-          <div className="stat-card"><div className="stat-card-icon">✅</div><div className="stat-card-label">Active</div><div className="stat-card-value">{products.filter(p => p.isActive).length}</div></div>
-          <div className="stat-card"><div className="stat-card-icon">💰</div><div className="stat-card-label">Est. Revenue</div><div className="stat-card-value">₹{revenue.toLocaleString()}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Products</div><div className="stat-card-value">{products.length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Active</div><div className="stat-card-value">{products.filter(p => p.isActive).length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Est. Revenue</div><div className="stat-card-value">₹{revenue.toLocaleString()}</div></div>
         </div>
 
         <div className="dashboard-section">
@@ -60,7 +60,7 @@ export default function VendorDashboard() {
           </div>
           <div className="card" style={{ overflow: 'hidden' }}>
             {products.length === 0 ? (
-              <div className="empty-state"><div className="icon">📦</div><p>No products yet. Add your first one!</p></div>
+              <div className="empty-state"><p>No products yet. Add your first one!</p></div>
             ) : (
               <table className="data-table">
                 <thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead>

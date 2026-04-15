@@ -33,11 +33,11 @@ export default function AdminDashboard() {
 
         {stats && (
           <div className="stats-grid">
-            <div className="stat-card"><div className="stat-card-icon">👥</div><div className="stat-card-label">Total Users</div><div className="stat-card-value">{stats.users}</div></div>
-            <div className="stat-card"><div className="stat-card-icon">📦</div><div className="stat-card-label">Products</div><div className="stat-card-value">{stats.products}</div></div>
-            <div className="stat-card"><div className="stat-card-icon">🛠️</div><div className="stat-card-label">Services</div><div className="stat-card-value">{stats.services}</div></div>
-            <div className="stat-card"><div className="stat-card-icon">🛒</div><div className="stat-card-label">Orders</div><div className="stat-card-value">{stats.orders}</div></div>
-            <div className="stat-card"><div className="stat-card-icon">💰</div><div className="stat-card-label">Revenue</div><div className="stat-card-value">₹{stats.revenue?.toLocaleString()}</div></div>
+            <div className="stat-card"><div className="stat-card-label">Total Users</div><div className="stat-card-value">{stats.users}</div></div>
+            <div className="stat-card"><div className="stat-card-label">Products</div><div className="stat-card-value">{stats.products}</div></div>
+            <div className="stat-card"><div className="stat-card-label">Services</div><div className="stat-card-value">{stats.services}</div></div>
+            <div className="stat-card"><div className="stat-card-label">Orders</div><div className="stat-card-value">{stats.orders}</div></div>
+            <div className="stat-card"><div className="stat-card-label">Revenue</div><div className="stat-card-value">₹{stats.revenue?.toLocaleString()}</div></div>
           </div>
         )}
 

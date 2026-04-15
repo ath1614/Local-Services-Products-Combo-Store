@@ -46,9 +46,9 @@ export default function ProviderDashboard() {
         </div>
 
         <div className="stats-grid">
-          <div className="stat-card"><div className="stat-card-icon">🛠️</div><div className="stat-card-label">Services</div><div className="stat-card-value">{services.length}</div></div>
-          <div className="stat-card"><div className="stat-card-icon">✅</div><div className="stat-card-label">Active</div><div className="stat-card-value">{services.filter(s => s.isActive).length}</div></div>
-          <div className="stat-card"><div className="stat-card-icon">⚡</div><div className="stat-card-label">Same Day</div><div className="stat-card-value">{services.filter(s => s.allowsSameDay).length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Services</div><div className="stat-card-value">{services.length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Active</div><div className="stat-card-value">{services.filter(s => s.isActive).length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Same Day</div><div className="stat-card-value">{services.filter(s => s.allowsSameDay).length}</div></div>
         </div>
 
         <div className="dashboard-section">
@@ -58,7 +58,7 @@ export default function ProviderDashboard() {
           </div>
           <div className="card" style={{ overflow: 'hidden' }}>
             {services.length === 0 ? (
-              <div className="empty-state"><div className="icon">🛠️</div><p>No services yet. Add your first one!</p></div>
+              <div className="empty-state"><p>No services yet. Add your first one!</p></div>
             ) : (
               <table className="data-table">
                 <thead><tr><th>Title</th><th>Category</th><th>Base Price</th><th>Duration</th><th>Same Day</th><th>Actions</th></tr></thead>

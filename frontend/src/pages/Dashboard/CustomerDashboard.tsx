@@ -24,24 +24,23 @@ export default function CustomerDashboard() {
     <div className="dashboard">
       <div className="container">
         <div className="dashboard-header">
-          <h1>Hey, {user?.name?.split(' ')[0]} 👋</h1>
+          <h1>Hello, {user?.name?.split(' ')[0]}</h1>
           <p>Here's what's happening with your orders</p>
         </div>
 
         <div className="stats-grid">
-          <div className="stat-card"><div className="stat-card-icon">📦</div><div className="stat-card-label">Total Orders</div><div className="stat-card-value">{orders.length}</div></div>
-          <div className="stat-card"><div className="stat-card-icon">🔄</div><div className="stat-card-label">Active</div><div className="stat-card-value">{active.length}</div></div>
-          <div className="stat-card"><div className="stat-card-icon">💸</div><div className="stat-card-label">Total Spent</div><div className="stat-card-value">₹{spent}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Total Orders</div><div className="stat-card-value">{orders.length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Active</div><div className="stat-card-value">{active.length}</div></div>
+          <div className="stat-card"><div className="stat-card-label">Total Spent</div><div className="stat-card-value">₹{spent}</div></div>
         </div>
 
         <div className="dashboard-section">
           <div className="dashboard-section-title">
             Recent Orders
-            <Link to="/orders" className="btn btn-ghost btn-sm">View all →</Link>
+            <Link to="/orders" className="btn btn-ghost btn-sm">View all</Link>
           </div>
           {orders.length === 0 ? (
             <div className="empty-state">
-              <div className="icon">🛒</div>
               <p>No orders yet. <Link to="/products">Start shopping</Link></p>
             </div>
           ) : (
