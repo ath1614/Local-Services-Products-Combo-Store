@@ -1,5 +1,7 @@
 # LocalLink — Hyperlocal Services & Products Platform
 
+**Live:** http://34.100.137.12:8090
+
 A full-stack hyperlocal marketplace where customers can buy products and book services from verified local vendors — all in a single unified cart and checkout.
 
 ## Tech Stack
