@@ -14,7 +14,7 @@ import VendorDashboard from './pages/Dashboard/VendorDashboard';
 import ProviderDashboard from './pages/Dashboard/ProviderDashboard';
 import AdminDashboard from './pages/Dashboard/AdminDashboard';
 
-const Protected = ({ children, roles }: { children: JSX.Element; roles?: string[] }) => {
+const Protected = ({ children, roles }: { children: React.ReactElement; roles?: string[] }) => {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" replace />;
   if (roles && !roles.includes(user.role)) return <Navigate to="/" replace />;
